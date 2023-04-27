@@ -24,9 +24,8 @@ class App {
             symbolsOfWord.add(symbol);
         }
 
-        var length = letters.size();
 
-        for (var num = 0; num < length; num++) {
+        for (var num = 0; num < letters.size(); num++) {
             var currentLettersSymbol = letters.get(num);
 
             for (var i = 0; i < symbolsOfWord.size(); i++) {
