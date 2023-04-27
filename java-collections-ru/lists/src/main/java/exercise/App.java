@@ -10,11 +10,11 @@ class App {
         List<Character> symbolsOfWord = new ArrayList<>();
         List<Character> letters = new ArrayList<>();
 
-        for(var i = 0; i < symbols.length; i++) {
+        for(var i = 0; i < symbols.length(); i++) {
             var letter = symbols.charAt(i);
             letters.add(letter);
         }
-        for (var i = 0; i < word.length; i++) {
+        for (var i = 0; i < word.length(); i++) {
             var symbol = word.charAt(i);
             symbolsOfWord.add(symbol);
         }
