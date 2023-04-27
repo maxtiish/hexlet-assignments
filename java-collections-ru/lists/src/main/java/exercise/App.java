@@ -8,15 +8,15 @@ import java.util.List;
 class App {
     public static boolean scrabble(String symbols, String word) {
         var wordAsArray = word.toCharArray();
-        List<String> symbolsOfWord1 = Arrays.asList(wordAsArray);
-        List<String> symbolsOfWord = new ArrayList(symbolsOfWord1);
+        List<Character> symbolsOfWord1 = Arrays.asList(wordAsArray);
+        List<Character> symbolsOfWord = new ArrayList(symbolsOfWord1);
 
         var symbolsAsArray = symbols.toCharArray();
-        List<String> letters1 = Arrays.asList(symbolsAsArray);
-        List<String> letters = new ArrayList(letters1);
+        List<Character> letters1 = Arrays.asList(symbolsAsArray);
+        List<Character> letters = new ArrayList(letters1);
 
-        for (char symbol : symbolsOfWord) {
-            for (char letter : letters) {
+        for (Character symbol : symbolsOfWord) {
+            for (Character letter : letters) {
                 if (symbol.equalsIgnoreCase(letter)) {
                     symbolsOfWord.remove(symbol);
                     letters.remove(letter);
