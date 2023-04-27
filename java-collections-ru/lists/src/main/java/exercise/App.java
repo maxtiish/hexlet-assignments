@@ -8,10 +8,12 @@ import java.util.List;
 class App {
     public static boolean scrabble(String symbols, String word) {
         var wordAsArray = word.toCharArray();
-        List<reference> symbolsOfWord = Arrays.asList(wordAsArray);
+        List<String> symbolsOfWord1 = Arrays.asList(wordAsArray);
+        List<String> symbolsOfWord = new ArrayList(symbolsOfWord1);
 
         var symbolsAsArray = symbols.toCharArray();
-        List<reference> letters = Arrays.asList(symbolsAsArray);
+        List<String> letters1 = Arrays.asList(symbolsAsArray);
+        List<String> letters = new ArrayList(letters1);
 
         for (char symbol : symbolsOfWord) {
             for (char letter : letters) {
