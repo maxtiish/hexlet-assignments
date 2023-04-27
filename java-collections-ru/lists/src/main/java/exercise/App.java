@@ -7,13 +7,17 @@ import java.util.List;
 // BEGIN
 class App {
     public static boolean scrabble(String symbols, String word) {
-        var wordAsArray = word.toCharArray();
-        List<Character> symbolsOfWord1 = Arrays.asList(wordAsArray);
-        List<Character> symbolsOfWord = new ArrayList<>(symbolsOfWord1);
+        List<Character> symbolsOfWord = new ArrayList<>();
+        List<Character> letters = new ArrayList<>();
 
-        var symbolsAsArray = symbols.toCharArray();
-        List<Character> letters1 = Arrays.asList(symbolsAsArray);
-        List<Character> letters = new ArrayList<>(letters1);
+        for(var i = 0; i < symbols.length; i++) {
+            var letter = symbols.charAt(i);
+            letters.add(letter);
+        }
+        for (var i = 0; i < word.length; i++) {
+            var symbol = word.charAt(i);
+            symbolsOfWord.add(symbol);
+        }
 
         for (Character symbol : symbolsOfWord) {
             for (Character letter : letters) {
