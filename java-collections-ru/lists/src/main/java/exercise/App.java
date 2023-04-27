@@ -7,27 +7,28 @@ import java.util.List;
 // BEGIN
 class App {
     public static boolean scrabble(String symbols, String word) {
-        List<Character> symbolsOfWord = new ArrayList<>();
-        List<Character> letters = new ArrayList<>();
-
         var symbolsLowerCase = symbols.toLowerCase();
         var wordLowerCase = word.toLowerCase();
 
-        for(var i = 0; i < symbols.length(); i++) {
-            var letter = symbolsLowerCase.charAt(i);
-            letters.add(letter);
+        char[] charsOfSymbols = symbolsLowerCase.toCharArray();
+        char[] charsOfWord = wordLowerCase.toCharArray();
+
+        List<Character> letters = new ArrayList<>();
+        List<Character> symbolsOfWord = new ArrayList<>();
+
+        for (char symbol : charsOfSymbols) {
+            letters.add(symbol);
         }
-        for (var i = 0; i < word.length(); i++) {
-            var symbol = wordLowerCase.charAt(i);
+
+        for (char symbol : charsOfWord) {
             symbolsOfWord.add(symbol);
         }
 
-        for (Character symbol : symbolsOfWord) {
-            for (Character letter : letters) {
-                if (symbol.equals(letter)) {
-                    symbolsOfWord.remove(symbol);
-                    letters.remove(letter);
-                }
+        for (var i = 0; i < symbolsOfWord.size(); i++) {
+            var currentSymbol = symbolsOfWord.get(i);
+            if (letters.contains(currentSymbol)) {
+                symbolsOfWord.remove(i);
+                letters.remove(currentSymbol);
             }
         }
         return symbolsOfWord.isEmpty();
