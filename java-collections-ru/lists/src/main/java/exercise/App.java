@@ -24,10 +24,12 @@ class App {
             symbolsOfWord.add(symbol);
         }
 
-        for (var num = 0; num < charsOfSymbols.length; num++) {
+        var length = letters.size();
+
+        for (var num = 0; num < length; num++) {
             var currentLettersSymbol = letters.get(num);
 
-            for (var i = 0; i < charsOfWord.length; i++) {
+            for (var i = 0; i < symbolsOfWord.size(); i++) {
                 var currentSymbol = symbolsOfWord.get(i);
 
                 if (currentLettersSymbol.equals(currentSymbol)) {
