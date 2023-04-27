@@ -10,18 +10,21 @@ class App {
         List<Character> symbolsOfWord = new ArrayList<>();
         List<Character> letters = new ArrayList<>();
 
+        var symbolsLowerCase = symbols.toLowerCase();
+        var wordLowerCase = word.toLowerCase();
+
         for(var i = 0; i < symbols.length(); i++) {
-            var letter = symbols.charAt(i);
+            var letter = symbolsLowerCase.charAt(i);
             letters.add(letter);
         }
         for (var i = 0; i < word.length(); i++) {
-            var symbol = word.charAt(i);
+            var symbol = wordLowerCase.charAt(i);
             symbolsOfWord.add(symbol);
         }
 
         for (Character symbol : symbolsOfWord) {
             for (Character letter : letters) {
-                if (symbol.equalsIgnoreCase(letter)) {
+                if (symbol.equals(letter)) {
                     symbolsOfWord.remove(symbol);
                     letters.remove(letter);
                 }
