@@ -32,7 +32,6 @@ class App {
                 var currentSymbol = symbolsOfWord.get(i);
 
                 if (currentLettersSymbol.equals(currentSymbol)) {
-                    letters.remove(num);
                     symbolsOfWord.remove(i);
                 }
             }
