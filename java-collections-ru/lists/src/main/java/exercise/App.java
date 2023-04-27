@@ -15,7 +15,7 @@ class App {
 
         for (char symbol : symbolsOfWord) {
             for (char letter : letters) {
-                if (symbol.equals(letter)) {
+                if (symbol.equalsIgnoreCase(letter)) {
                     symbolsOfWord.remove(symbol);
                     letters.remove(letter);
                 }
