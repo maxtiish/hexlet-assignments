@@ -25,10 +25,13 @@ class App {
         }
 
         for (var i = 0; i < symbolsOfWord.size(); i++) {
-            var currentSymbol = symbolsOfWord.get(i);
-            if (letters.contains(currentSymbol)) {
-                symbolsOfWord.remove(i);
-                letters.remove(currentSymbol);
+            for (var n = 0; n < letters.size(); n++) {
+                var currentLettersSymbol = letters.get(n);
+                var currentWordSymbol = symbolsOfWord.get(i);
+                if (currentLettersSymbol.equals(currentWordSymbol)) {
+                    letters.remove(n);
+                    symbolsOfWord.remove(i);
+                }
             }
         }
         return symbolsOfWord.isEmpty();
