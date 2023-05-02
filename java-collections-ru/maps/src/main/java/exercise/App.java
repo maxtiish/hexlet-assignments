@@ -7,6 +7,10 @@ import java.util.Map;
 class App {
     public static Map getWordCount(String sentence) {
         Map<String, Integer> words = new HashMap<>();
+
+        if (sentence.length() < 1) {
+            return words;
+        }
         String[] sentenceAsArray = sentence.split(" ");
 
         for (var i = 0; i < sentenceAsArray.length; i++) {
@@ -17,8 +21,7 @@ class App {
         for (Map.Entry<String, Integer> word: words.entrySet()) {
             for (var i = 0; i < sentenceAsArray.length; i++) {
                 if (word.getKey().equals(sentenceAsArray[i])) {
-                    var newValue = word.getValue() + 1;
-                    words.put(word.getKey(), newValue);
+                    words.put(word.getKey(), word.getValue() + 1);
                 }
             }
         }
