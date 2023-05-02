@@ -9,24 +9,28 @@ class App {
         Map<String, Integer> words = new HashMap<>();
         String[] sentenceAsArray = sentence.split(" ");
 
+        for (var i = 0; i < sentenceAsArray.length; i++) {
+            if (!words.containsKey(sentenceAsArray[i])) {
+                words.put(sentenceAsArray[i], 0);
+            }
+        }
+        for (Map.Entry<String, Integer> word: words.entrySet()) {
             for (var i = 0; i < sentenceAsArray.length; i++) {
-                for (Map.Entry<String, Integer> word: words.entrySet()) {
-                    if (!words.containsKey(sentenceAsArray[i])) {
-                        words.put(sentenceAsArray[i], 1);
-                    } else {
-                        words.put(sentenceAsArray[i], word.getValue() + 1);
+                if (word.getKey().equals(sentenceAsArray[i])) {
+                    var newValue = word.getValue() + 1;
+                    words.put(word.getKey(), newValue);
                 }
             }
         }
-            return words;
+        return words;
     }
 
     public static String toString(Map words) {
         Map<String, Integer> newWords = new HashMap<>();
         var result = new StringBuilder();
-        result.append("{\n");
+        result.append("{");
         for (Map.Entry<String, Integer> word: newWords.entrySet()) {
-            result.append("  " + word.getKey() + ": " + word.getValue() + "\n");
+            result.append("\n  " + word.getKey() + ": " + word.getValue());
         }
         result.append('}');
         return result.toString();
