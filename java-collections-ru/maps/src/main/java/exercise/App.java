@@ -35,7 +35,7 @@ class App {
         for (Map.Entry<String, Integer> word: newWords.entrySet()) {
             result.append("\n  " + word.getKey() + ": " + word.getValue());
         }
-        result.append('}');
+        result.append("\n}");
         return result.toString();
     }
 }
