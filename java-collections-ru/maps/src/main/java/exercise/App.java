@@ -30,6 +30,9 @@ class App {
 
     public static String toString(Map words) {
         Map<String, Integer> newWords = new HashMap<>(words);
+        if (newWords.isEmpty()) {
+            return "{}";
+        }
         var result = new StringBuilder();
         result.append("{");
         for (Map.Entry<String, Integer> word: newWords.entrySet()) {
