@@ -17,8 +17,9 @@ class App {
                     var count = 0;
                     if (information.getValue().equals(thisBook.getValue())) {
                         count++;
-                    } else if (information.getValue().equals(thisBook.getValue()) && count == oneBook.size()) {
-                        result.add(oneBook);
+                        if (count == book.size()) {
+                            result.add(oneBook);
+                        }
                     }
                 }
             }
