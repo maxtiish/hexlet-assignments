@@ -14,7 +14,7 @@ class App {
         for (Map<String, String> oneBook : books) {
             for (Map.Entry<String, String> information : book.entrySet()) {
                 for (Map.Entry<String, String> thisBook : oneBook.entrySet()) {
-                    var count = 0;
+                    var count = 1;
                     if (information.getValue().equals(thisBook.getValue())) {
                         count++;
                         if (count == book.size()) {
