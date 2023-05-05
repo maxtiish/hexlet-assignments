@@ -12,8 +12,8 @@ class App {
         List<Map<String, String>> result = new ArrayList<>();
 
         for (Map<String, String> oneBook : books) {
+            var count = 0;
             for (Map.Entry<String, String> thisBook : oneBook.entrySet()) {
-                var count = 0;
                 for (Map.Entry<String, String> information : book.entrySet()) {
                     if (thisBook.getValue().equals(information.getValue())) {
                         count++;
