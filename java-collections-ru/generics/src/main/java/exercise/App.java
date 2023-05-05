@@ -13,12 +13,13 @@ class App {
 
         for (Map<String, String> oneBook : books) {
             for (Map.Entry<String, String> information : book.entrySet()) {
-                var count = 1;
+                var count = 0;
                 for (Map.Entry<String, String> thisBook : oneBook.entrySet()) {
                     if (thisBook.getValue().equals(information.getValue())) {
                         count++;
                         if (count == book.size()) {
                             result.add(oneBook);
+                            break;
                         }
                     }
                 }
