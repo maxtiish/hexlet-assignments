@@ -12,14 +12,15 @@ class App {
         List<Map<String, String>> result = new ArrayList<>();
 
         for (Map<String, String> oneBook : books) {
-           for (Map.Entry<String, String> information : book.entrySet()) {
-               for (Map.Entry<String, String> thisBook : oneBook.entrySet()) {
-                   if (!information.getValue().equals(thisBook.getValue())) {
-                       break;
-                   } else {
-                       result.add(oneBook);
-                   }
-               }
+            for (Map.Entry<String, String> information : book.entrySet()) {
+                for (Map.Entry<String, String> thisBook : oneBook.entrySet()) {
+                    var count = 0;
+                    if (information.getValue().equals(thisBook.getValue())) {
+                        count++;
+                    } else if (information.getValue().equals(thisBook.getValue()) && count == oneBook.size()) {
+                        result.add(oneBook);
+                    }
+                }
             }
         }
         return result;
