@@ -8,10 +8,18 @@ import java.util.stream.Collectors;
 class App {
     public static long getCountOfFreeEmails(List<String> emails) {
         long count1 = emails.stream()
-                .filter(mail -> emails.contains("gmail.com"))
+                .filter(mail -> mail.contains("@gmail.com"))
                 .collect(Collectors.counting());
 
-        var result = count1;
+        long count2 = emails.stream()
+                .filter(mail -> mail.contains("@yandex.ru"))
+                .collect(Collectors.counting());
+
+        long count3 = emails.stream()
+                .filter(mail -> mail.contains("@hotmail.com"))
+                .collect(Collectors.counting());
+
+        var result = count1 + count2 + count3;
 
         return result;
     }
